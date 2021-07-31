@@ -1,0 +1,16 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE hibernate-reverse-engineering PUBLIC "-//Hibernate/Hibernate Reverse Engineering DTD 3.0//EN" "http://hibernate.org/dtd/hibernate-reverse-engineering-3.0.dtd" >
+
+<hibernate-reverse-engineering>
+  <table-filter match-catalog="tenispadel" match-name="club"/>
+  <table-filter match-catalog="tenispadel" match-name="competicion"/>
+  <table-filter match-catalog="tenispadel" match-name="equipo"/>
+  <table-filter match-catalog="tenispadel" match-name="forma"/>
+  <table-filter match-catalog="tenispadel" match-name="grupo"/>
+  <table-filter match-catalog="tenispadel" match-name="inscribe"/>
+  <table-filter match-catalog="tenispadel" match-name="juega"/>
+  <table-filter match-catalog="tenispadel" match-name="jugador"/>
+  <table-filter match-catalog="tenispadel" match-name="participa"/>
+  <table-filter match-catalog="tenispadel" match-name="partido"/>
+  <table-filter match-catalog="tenispadel" match-name="set"/>
+</hibernate-reverse-engineering>

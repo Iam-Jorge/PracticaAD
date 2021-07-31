@@ -1,0 +1,26 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<!-- Generated 20-feb-2021 18:09:36 by Hibernate Tools 5.4.3.Final --><!DOCTYPE hibernate-mapping PUBLIC "-//Hibernate/Hibernate Mapping DTD 3.0//EN" "http://www.hibernate.org/dtd/hibernate-mapping-3.0.dtd">
+<hibernate-mapping auto-import="true" default-access="property" default-cascade="none" default-lazy="true">
+    <class catalog="tenispadel" dynamic-insert="false" dynamic-update="false" mutable="true" name="Principal.Set" optimistic-lock="version" polymorphism="implicit" select-before-update="false" table="set">
+        <id name="id" type="java.lang.Integer">
+            <column name="id"/>
+            <generator class="identity"/>
+        </id>
+        <many-to-one class="Principal.Equipo" embed-xml="true" fetch="select" insert="true" name="equipo" not-found="exception" optimistic-lock="true" unique="false" update="true">
+            <column name="idequipoganador" not-null="true"/>
+        </many-to-one>
+        <many-to-one class="Principal.Partido" embed-xml="true" fetch="select" insert="true" name="partido" not-found="exception" optimistic-lock="true" unique="false" update="true">
+            <column name="idpartido" not-null="true"/>
+        </many-to-one>
+        <property generated="never" lazy="false" name="orden" optimistic-lock="true" type="int" unique="false">
+            <column name="orden" not-null="true">
+            </column>
+        </property>
+        <property generated="never" lazy="false" name="res1" optimistic-lock="true" type="int" unique="false">
+            <column name="res1" not-null="true"/>
+        </property>
+        <property generated="never" lazy="false" name="res2" optimistic-lock="true" type="int" unique="false">
+            <column name="res2" not-null="true"/>
+        </property>
+    </class>
+</hibernate-mapping>

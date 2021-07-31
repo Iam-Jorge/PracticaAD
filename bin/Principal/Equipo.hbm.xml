@@ -1,0 +1,48 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<!-- Generated 20-feb-2021 18:09:36 by Hibernate Tools 5.4.3.Final --><!DOCTYPE hibernate-mapping PUBLIC "-//Hibernate/Hibernate Mapping DTD 3.0//EN" "http://www.hibernate.org/dtd/hibernate-mapping-3.0.dtd">
+<hibernate-mapping auto-import="true" default-access="property" default-cascade="none" default-lazy="true">
+    <class catalog="tenispadel" dynamic-insert="false" dynamic-update="false" mutable="true" name="Principal.Equipo" optimistic-lock="version" polymorphism="implicit" select-before-update="false" table="equipo">
+        <id name="id" type="java.lang.Integer">
+            <column name="id"/>
+            <generator class="identity"/>
+        </id>
+        <set embed-xml="true" fetch="select" inverse="false" lazy="true" mutable="true" name="competicions" optimistic-lock="true" sort="unsorted" table="inscribe">
+            <key on-delete="noaction">
+                <column name="idequipo" not-null="true"/>
+            </key>
+            <many-to-many embed-xml="true" entity-name="Principal.Competicion" not-found="exception" unique="false">
+                <column name="idcompeticion" not-null="true"/>
+            </many-to-many>
+        </set>
+        <set embed-xml="true" fetch="select" inverse="false" lazy="true" mutable="true" name="jugadors" optimistic-lock="true" sort="unsorted" table="forma">
+            <key on-delete="noaction">
+                <column name="idequipo" not-null="true"/>
+            </key>
+            <many-to-many embed-xml="true" entity-name="Principal.Jugador" not-found="exception" unique="false">
+                <column name="idjugador" not-null="true"/>
+            </many-to-many>
+        </set>
+        <set embed-xml="true" fetch="select" inverse="true" lazy="true" mutable="true" name="sets" optimistic-lock="true" sort="unsorted" table="set">
+            <key on-delete="noaction">
+                <column name="idequipoganador" not-null="true"/>
+            </key>
+            <one-to-many class="Principal.Set" embed-xml="true" not-found="exception"/>
+        </set>
+        <set embed-xml="true" fetch="select" inverse="false" lazy="true" mutable="true" name="grupos" optimistic-lock="true" sort="unsorted" table="participa">
+            <key on-delete="noaction">
+                <column name="idequipo" not-null="true"/>
+            </key>
+            <many-to-many embed-xml="true" entity-name="Principal.Grupo" not-found="exception" unique="false">
+                <column name="idgrupo" not-null="true"/>
+            </many-to-many>
+        </set>
+        <set embed-xml="true" fetch="select" inverse="true" lazy="true" mutable="true" name="partidos" optimistic-lock="true" sort="unsorted" table="juega">
+            <key on-delete="noaction">
+                <column name="idequipo" not-null="true"/>
+            </key>
+            <many-to-many embed-xml="true" entity-name="Principal.Partido" not-found="exception" unique="false">
+                <column name="idpartido" not-null="true"/>
+            </many-to-many>
+        </set>
+    </class>
+</hibernate-mapping>
